@@ -6,6 +6,9 @@ import Navigator from './src/Navigator'
 
 import storeConfig from './src/Store/storeCongif'
 
+import axios from 'axios'
+axios.defaults.baseURL = 'https://instaclone-ca298.firebaseio.com/'
+
 const store = storeConfig()
 
 const Redux = () => {
