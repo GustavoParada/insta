@@ -3,7 +3,7 @@ import axios from 'axios'
 import { setMessage } from '../actions/message'
 
 const authBaseURL = 'https://identitytoolkit.googleapis.com/v1'
-const API_KEY = 'AIzaSyB3DPVn351go8J-_zEvgUkbDlKFFZ0UE1o'
+const API_KEY = ''
 
 export const userLogged = user => {
     return {
