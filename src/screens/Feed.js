@@ -3,8 +3,12 @@ import { connect } from 'react-redux'
 import { StyleSheet, FlatList, View } from 'react-native'
 import Header from '../components/Header'
 import Post from '../components/Post'
+import { getPosts } from '../Store/actions/posts'
 
 class Feed extends Component {
+    componentDidMount = () => {
+        this.props.onGetPosts()
+    }
 
     render() {
         return (
@@ -13,7 +17,7 @@ class Feed extends Component {
                 <FlatList
                     data={this.props.posts}
                     keyExtractor={item => `${item.id}`}
-                    renderItem={({ item }) => 
+                    renderItem={({ item }) =>
                         <Post key={item.id} {...item} />
                     }
                 />
@@ -37,4 +41,10 @@ const mapStateToProps = ({ posts }) => {
     }
 }
 
-export default connect(mapStateToProps, null)(Feed)
+const mapDispatchToProps = dispatch => {
+    return {
+        onGetPosts: () => dispatch(getPosts())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Feed)

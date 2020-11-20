@@ -27,7 +27,6 @@ exports.uploadImage = functions.https.onRequest((request, response) => {
                 }
             }, (err, file) => {
                 if (err) {
-                    console.log(`3: ${err}`)
                     return response.status(500).json({ error: `6: ${err}` })
                 } else {
                     const fileName = encodeURIComponent(file.name)
@@ -37,7 +36,6 @@ exports.uploadImage = functions.https.onRequest((request, response) => {
                 }
             })
         } catch (err) {
-            console.log(`4: ${err}`)
             return response.status(500).json({ error: `5: ${err}` })
         }
     })

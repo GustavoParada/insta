@@ -1,9 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
+import Spalsh from './screens/Splash'
 import Feed from './screens/Feed'
 import AddPhoto from './screens/AddPhoto'
 import Profile from './screens/Profile'
@@ -61,6 +62,7 @@ function AuthStackStackScreen() {
     </AuthStack.Navigator>
   );
 }
+
 
 export default function MenuNavigator() {
     return (
